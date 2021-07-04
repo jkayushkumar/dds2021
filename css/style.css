@@ -17,13 +17,11 @@
 }
 
 body {
-    /* overflow: hidden; */
     margin: 0;
     padding: 0;
-    font-family: 'Source Sans Pro', 'Work Sans', 'Segoe UI', Tahoma, sans-serif;
-    font-size: 14px;
+    font-family: 'Rubik', 'Work Sans', 'Segoe UI', Tahoma, sans-serif;
+    font-size: 16px;
     font-weight: 400;
-    /* background-color: var(--bck); */
 }
 
 ::-webkit-scrollbar {
@@ -38,6 +36,10 @@ input, textarea, button, select, a, div, img {
 
 section {
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    vertical-align: middle;
     width: 100%;
     height: 100%;
 }
@@ -59,129 +61,32 @@ section {
 }
 
 /* ------------------------------------------------- */
-#intro{
-    font-size: 30px;
-    font-weight: 600;
-}
-#counter{
-    font-size: 20px;
-    font-weight: 500;
-    text-align: center;
-    padding: 20px;
-}
-#instafeed{
-    /* position: absolute;
-    bottom: -50px;
-    left: 50%;
-    transform: translateX(-50%); */
-    width: 50%;
 
-}
-.task{
-    font-size: 20px;
-}
-.eapps-link{
-    display: none!important;
-}
-#instacover{
-    position: relative;
-    bottom: 0;
-    background-color: #FFFFFF;
-    z-index: 99;
-    width: 100%;
-    height: 20px;
-}
-#droneId {
-    width: 10px;
-    height: 10px;
-    z-index: 3;
-    transform: scale(.4) translate3d(900px, 700px, 0);
-}
-
-.deep {
-    background-image: url("../images/webDepth1.png");
-    background-size: 100% 100%;
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    opacity: .7;
-}
-
-#sea {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    /* overflow: hidden; */
-    /* transform: scale(1.5) skewY(-10deg); */
-    background-image: url("../images/entrance.png");
-    background-size: 100% 120%;
-    background-repeat: repeat;
-    opacity: 1;
-    transition: 2s;
-    /* filter: url(#turbulence); */
-    z-index: 1;
-}
-
-.island {
-    height: 300px;
-    content: url("../images/island2.png");
-}
-
-#island1 {
-    position: absolute;
-    left: 75%;
-    top: 20%;
-}
-
-#island2 {
-    height: 200px;
-    position: absolute;
-    left: 20%;
-    top: 60%;
-    content: url("../images/island.png");
-}
-
-/* sample ------------------------------------ */
-
-.go {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 75%;
-    height: .75in;
-    width: 2.25in;
-    border-radius: 10px;
-    cursor: pointer;
-    background-color: var(--wood);
-    color: #FFFFFF;
-    font-size: 20px;
-    box-shadow: 1px 2px 4px #595859c2, -1px -1px 4px #595859c5;
-}
-
-.interior {
-    background-image: url("../images/interior2.png");
+#intro {
+    background-image: url("../images/logo/DDS_2021_Logo.svg");
+    background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
-    background-position: center;
-    opacity: 0;
-    height: 100vh;
-    transition: 2s;
+    height: 60vh;
+    width: 60vw;
+}
+
+#counter {
+    width: 60vw;
+    font-size: 24px;
+    font-weight: 400;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 /* mobile portrait */
 
 @media only screen and (max-width: 567px) {
-    /* #droneId {
-       
-        transform: scale(.4) translate3d(200px,300px,0);    
+    #intro {
+        background-image: url("../images/logo/DDS_SVG_Logo_Vert.svg");
+        height: 70vh;
     }
-    #sea {        
-        background-image: url("../images/mobile.png");
-        background-size: cover;
-        background-repeat: no-repeat;
-    } */
 }
 
 /* mobile landscape, tab */
