@@ -1,0 +1,34 @@
+.boat {
+    position: absolute;
+    content: url("../images/objects/boat.png");
+    animation: boatFloat 2s cubic-bezier(0.1, 0.7, 1.0, 0.1) 0s infinite;
+    height: 2in;
+}
+
+.boatDiv {
+    position: absolute;
+    top: 50%;
+    height: 2.5in;
+    animation: boatMove 10s linear 0s infinite;
+}
+
+@keyframes boatFloat {
+    0% {
+        top: 0%;
+    }
+    60% {
+        top: 3%;
+    }
+    100% {
+        top: 0%;
+    }
+}
+
+@keyframes boatMove {
+    0% {
+        left: 0
+    }
+    100% {
+        left: 100%;
+    }
+}
