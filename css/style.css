@@ -135,7 +135,10 @@ section {
     padding: 10px;
     box-sizing: border-box;
 }
-
+#about-div{
+    width: 395px;
+    height: auto;
+}
 
 /* mobile portrait */
 
