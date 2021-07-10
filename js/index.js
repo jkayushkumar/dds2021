@@ -16,7 +16,7 @@
 // });
 
 window.onload = function () {
-    GetCounterValue();
+    GetCounterValue();    
 }
 
 window.addEventListener("mousemove", parallaxBack);
@@ -41,3 +41,5 @@ function GetCounterValue() {
     setTimeout(GetCounterValue, 1000);
 
 }
+
+console.log( document.getElementsByClassName('elfsight-app-c5376cce-96fe-447f-af0f-b3ab7b8fe20d')[0]);

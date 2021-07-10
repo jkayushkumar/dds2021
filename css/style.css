@@ -41,7 +41,22 @@ section {
     height: 100vh;
     width: 100vw;
 }
-
+.eapps-link{
+    display: none!important;
+}
+.eapps-remove-link{
+    display: none!important;
+}
+.content{
+    width: 90%;
+    height: 100%;
+    left: 5%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    vertical-align: middle;
+    justify-content: space-evenly;
+}
 /* Utility Classes ----------------------------------*/
 
 .left-div {
@@ -125,7 +140,7 @@ section {
     width: 142px;
 }
 #intro-img{
-    background-image: url('../images/logo/324543531.svg');
+    background-image: url('../images/324543531.svg');
     background-position: center;
     background-size: cover;    
 }
