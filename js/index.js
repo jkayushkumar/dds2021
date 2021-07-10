@@ -1,4 +1,4 @@
-// gsap.registerPlugin(ScrollTrigger);
+//gsap.registerPlugin(ScrollTrigger);
 
 // gsap.utils.toArray(".flyIn_left").forEach(function (elem) {
 //     gsap.from(elem, {
@@ -16,7 +16,7 @@
 // });
 
 window.onload = function () {
-    GetCounterValue();    
+    GetCounterValue();
 }
 
 window.addEventListener("mousemove", parallaxBack);
@@ -27,6 +27,35 @@ function parallaxBack(e) {
         const y = (window.innerWidth - e.pageY * speed) / 200
         parallax.style.transform = `translate(${x}px,${y}px)`;
     })
+}
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function nextMsg(n) {
+    showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+    showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+    var i;
+    var slides = document.getElementsByClassName("slide");
+    if (n > slides.length) { slideIndex = 1 }
+    if (n < 1) { slideIndex = slides.length }
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.opacity = "0";
+        slides[i].style.display = "none";
+    }
+    if (!(slides[slideIndex - 1] == undefined)) {
+        slides[slideIndex - 1].style.display = "flex";
+        setTimeout(function () {
+            slides[slideIndex - 1].style.opacity = "1";
+          }, 10);
+    }
+    //ScrollTrigger.refresh()
 }
 
 function GetCounterValue() {
@@ -41,5 +70,3 @@ function GetCounterValue() {
     setTimeout(GetCounterValue, 1000);
 
 }
-
-console.log( document.getElementsByClassName('elfsight-app-c5376cce-96fe-447f-af0f-b3ab7b8fe20d')[0]);
