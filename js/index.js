@@ -30,10 +30,12 @@ function parallaxBack(e) {
 }
 
 var slideIndex = 1;
+var initialN = 0;
 showSlides(slideIndex);
 
 function nextMsg(n) {
-    showSlides(slideIndex += n);
+    initialN = n;
+    showSlides(slideIndex += n);    
 }
 
 function currentSlide(n) {
@@ -46,14 +48,39 @@ function showSlides(n) {
     if (n > slides.length) { slideIndex = 1 }
     if (n < 1) { slideIndex = slides.length }
     for (i = 0; i < slides.length; i++) {
-        slides[i].style.opacity = "0";
+        slides[i].animate([
+            { opacity: 1, transform: 'translateX(0)' },
+            { opacity: 0, transform: 'translateX(-100%)' }
+        ], {
+            duration: 500,
+            iterations: 1
+        });
         slides[i].style.display = "none";
     }
     if (!(slides[slideIndex - 1] == undefined)) {
         slides[slideIndex - 1].style.display = "flex";
         setTimeout(function () {
             slides[slideIndex - 1].style.opacity = "1";
-          }, 10);
+        }, 10);
+        if (initialN > 0) {
+            slides[slideIndex - 1].animate([
+                { opacity: 0, transform: 'translateX(100%)' },
+                { opacity: 1, transform: 'translateX(0)' }
+            ], {
+                duration: 500,
+                iterations: 1
+            });
+        }
+        else {
+            slides[slideIndex - 1].animate([
+                { opacity: 0, transform: 'translateX(-100%)' },
+                { opacity: 1, transform: 'translateX(0)' }
+            ], {
+                duration: 500,
+                iterations: 1
+            });
+        }
+
     }
     //ScrollTrigger.refresh()
 }
